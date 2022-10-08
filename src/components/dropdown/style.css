@@ -1,8 +1,8 @@
-.text-field {
+.dropdown {
     margin: 24px 0;
 }
 
-.text-field label {
+.dropdown label {
     display: block;
     margin-bottom: 8px;
 
@@ -10,7 +10,7 @@
     font-weight: bold;
 }
 
-.text-field input {
+.dropdown select {
     width: 100%;
     border: none;
     background-color: #fff;
