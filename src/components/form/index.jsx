@@ -4,7 +4,7 @@ import DropDown from "../dropdown";
 import Button from "../button";
 import { useState } from "react";
 
-const Form = () => {
+const Form = (props) => {
     const teams = [
         "Programação",
         "Front-End",
@@ -17,7 +17,12 @@ const Form = () => {
 
     const submit = (event) => {
         event.preventDefault();
-        console.log("O Formulário foi enviado =>", name, role, image, team);
+        props.addCollaborator({
+            name,
+            role,
+            image,
+            team
+        });
     }
 
     const [name, setName] = useState("");
