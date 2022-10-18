@@ -5,16 +5,6 @@ import Button from "../button";
 import { useState } from "react";
 
 const Form = (props) => {
-    const teams = [
-        "Programação",
-        "Front-End",
-        "Data Science",
-        "Devops",
-        "UX e Design",
-        "Mobile",
-        "Inovação e Gestão"
-    ];
-
     const submit = (event) => {
         event.preventDefault();
         props.addCollaborator({
@@ -23,12 +13,16 @@ const Form = (props) => {
             image,
             team
         });
+        setName("");
+        setRole("");
+        setImage("");
+        setTeam("Programação");
     }
 
     const [name, setName] = useState("");
     const [role, setRole] = useState("");
     const [image, setImage] = useState("");
-    const [team, setTeam] = useState("");
+    const [team, setTeam] = useState("Programação");
 
     return (
         <section className="form-section">
@@ -58,7 +52,7 @@ const Form = (props) => {
                     value={team}
                     onChange={value => setTeam(value)} 
                     label="Time" 
-                    itens={teams} 
+                    itens={props.teams} 
                     required
                 />
                 <Button>Criar Card</Button>
