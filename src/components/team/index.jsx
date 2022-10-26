@@ -2,8 +2,8 @@ import Collaborator from "../collaborator";
 import "./style.css";
 
 const Team = (props) => {
-    return (
-        (props.collaborators.length > 0) ? <section
+    return props.collaborators.length > 0 ? (
+        <section
             className="team"
             style={{ backgroundColor: props.secondaryColor }}
         >
@@ -11,6 +11,7 @@ const Team = (props) => {
             <div className="collaborators">
                 {props.collaborators.map((collaborator) => (
                     <Collaborator
+                        backgroundColor={props.primaryColor}
                         key={collaborator.name}
                         name={collaborator.name}
                         role={collaborator.role}
@@ -19,7 +20,8 @@ const Team = (props) => {
                 ))}
             </div>
         </section>
-        : ""
+    ) : (
+        ""
     );
 };
 
